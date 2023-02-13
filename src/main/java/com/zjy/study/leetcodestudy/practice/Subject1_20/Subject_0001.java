@@ -1,4 +1,4 @@
-package com.zjy.study.leetcodestudy.practice;
+package com.zjy.study.leetcodestudy.practice.Subject1_20;
 
 import java.util.Arrays;
 import java.util.HashMap;

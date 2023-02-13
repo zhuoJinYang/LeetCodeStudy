@@ -11,3 +11,7 @@ AOP：
 @Transactional -> 添加事务支持
 
 @ConditionalOnMissingBean(class) -> 当没有指定Bean的时候注入
+
+三级缓存：
+singletonObject：一级缓存
+![三级缓存](../annex/Spring三级缓存.webp)
