@@ -2,7 +2,6 @@ package com.zjy.study.leetcodestudy.practice.Subject1_20;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -65,7 +64,7 @@ public class Subject_0015 {
                         right --;
                     }
                     while (right > left && nums[left] == nums[left + 1]){
-                        left --;
+                        left ++;
                     }
                     right --;
                     left ++;
@@ -76,6 +75,11 @@ public class Subject_0015 {
     }
 
     public static void main(String[] args) {
-
+        int[] nums = {-1,0,1,2,-1,-4};
+        System.out.println(threeSum(nums));
     }
+    /**
+     * 感想：
+     *      很棒,继续加油
+     */
 }
