@@ -29,3 +29,14 @@ Java关键字                接口
 1.CountDownLatch(减法计数器)
 2.CyclicBarrier(加法计数器)
 3.Semaphore(信号量)
+
+线程池：三大方式,七大参数,四种拒绝策略
+程序运行，本质：占用系统资源！优化资源的使用 =》 池化技术(线程池、连接池、内存池、对象池)[创建、销毁，十分浪费资源]
+
+池化技术：事先准备好一些资源,如果有人要用，就来我这里拿，用完了之后还给我，以此来提高效率
+1、降低资源消耗
+2、提高响应速度
+3、方便线程管理
+(不允许用Executors去创建线程池,而是通过ThreadPoolExecutor的方式,
+Executors和singleThreadPool允许请求队列长度为Integer.MAX_VALUE,会堆积大量的请求,从而导致OOM,
+CachedThreadPool允许创建线程数量为Integer.MAX_VALUE,可能创建大量的线程,从而导致OOM)
