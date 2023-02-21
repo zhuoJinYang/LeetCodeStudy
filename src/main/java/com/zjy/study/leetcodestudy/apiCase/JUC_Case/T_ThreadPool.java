@@ -16,10 +16,16 @@ public class T_ThreadPool {
         //ExecutorService threadPool = Executors.newFixedThreadPool(5);//创建固定线程的线程池
         //ExecutorService threadPool = Executors.newCachedThreadPool();//创建可伸缩线程池
 
+        // 获取CPU核数 电脑处理器数
+        System.out.println(Runtime.getRuntime().availableProcessors());
         //手动创建线程池 ThreadPoolExecutor
+        //最大线程到底如何定义？
+        //1、CPU 密集型  电脑处理器数是几，就是几，可以保证CPU的效率最高！
+        //2、IO 密集型   大于 程序中十分耗IO的线程数   ---> 程序中 15个大型任务 io十分占用资源！ =》 30
+
         ExecutorService threadPool = new ThreadPoolExecutor(
                 2,  //核心线程池大小
-                5,  //最大核心线程池大小
+                Runtime.getRuntime().availableProcessors(),  //最大核心线程池大小
                 3,  //超时了没有人调用就会释放
                 TimeUnit.SECONDS,   //超时单位
                 new LinkedBlockingQueue<>(3),   //阻塞队列

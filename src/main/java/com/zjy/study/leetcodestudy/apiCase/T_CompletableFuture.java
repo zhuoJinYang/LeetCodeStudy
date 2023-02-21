@@ -38,6 +38,14 @@ public class T_CompletableFuture {
         List<String> strResultList = new ArrayList<>();
         for (CompletableFuture<?> future : futures){
             try {
+                // get 获取异常可写成以下代码
+                /*future.whenComplete((t,u) -> {
+                    System.out.println("t=>" + t);// 正常返回结果
+                    System.out.println("u=>" + u);// 错误信息
+                }).exceptionally((e -> {
+                    e.printStackTrace();
+                    return null;
+                })).get();*/
                 strResultList.addAll((List<String>)future.get());
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
