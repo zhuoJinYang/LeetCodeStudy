@@ -3,6 +3,8 @@ package com.zjy.study.leetcodestudy.apiCase;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.StampedLock;
 
 /**
  * @Author zjy
@@ -19,6 +21,10 @@ public class T_Demo {
         partitionIdList.forEach(partitionIds -> {
             System.out.println("partitionIds -> " + partitionIds);
         });
+        StampedLock stampedLock = new StampedLock();
+        stampedLock.tryReadLock();
+        stampedLock.tryOptimisticRead();
+        ReentrantLock rlock = new ReentrantLock();
     }
 
     private static <T> List<List<T>> splitList(List<T> list, int num){
