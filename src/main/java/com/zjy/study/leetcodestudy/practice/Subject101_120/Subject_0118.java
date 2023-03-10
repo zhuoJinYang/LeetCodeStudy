@@ -1,5 +1,6 @@
 package com.zjy.study.leetcodestudy.practice.Subject101_120;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,10 +24,22 @@ public class Subject_0118 {
      * 输出: [[1]]
      */
     private static List<List<Integer>> generate(int numRows) {
-        return null;
+        List<List<Integer>> res = new ArrayList<>();
+        for (int i = 0; i < numRows; i++) {
+            List<Integer> row = new ArrayList<>();
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || j == i){
+                    row.add(1);
+                    continue;
+                }
+                row.add(res.get(i - 1).get(j) + res.get(i - 1).get(j - 1));
+            }
+            res.add(row);
+        }
+        return res;
     }
 
     public static void main(String[] args) {
-
+        System.out.println(generate(5));
     }
 }
